@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int no, storage, output;
+    int input, bucketsize, size_left;
+    printf("Enter bucket size");
+    scanf("%d",&bucketsize);
+    printf("Enter output");
+    scanf("%d",&output);
+    printf("Enter number of packets");
+    scanf("%d",&no);
+    storage = 0;
+
+    for (int i = 0; i < no; i++) 
+    {
+        printf("Enter input packet size");
+        scanf("%d",&input);
+        size_left = bucketsize - storage;
+        if (input <= size_left) {
+            
+            storage += input;
+        }
+        else {
+            printf("Packet cannot be taken as it is greater than bucket size\n");
+        }
+        storage -= output;
+    }
+    printf("The size left is %d",size_left);
+    return 0;
+}
+ 
